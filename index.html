@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My simple site</title>
+	<style type="text/css">
+		html,body 
+        {   
+        	height: 100%;
+        	background-color: rgb(128, 128, 128);
+        	margin: 0;
+        	padding: 0;
+        }
+        .screen
+        {
+        	height: 100%;
+        	background-color: rgba(175, 238, 238);
+        }
+        .screen:nth-of-type(1)
+        {
+        	background-image: url(imeg/screen1.jpeg);
+        	background-size: 100% auto;
+        	background-repeat: no-repeat;/*устанавливает одно фоновое изображение в элементе без его повторений*/
+        }
+
+        #menu_bar
+        {
+        	display: flex;/*способность гибкого элемента растягиваться или сжиматься для заполнения собой доступного свободного пространства*/
+        	background-color: rgba(255, 228, 225);
+        	font-size: 1.8em;/*размер шрифта*/
+        }
+        #right_menu
+        {
+        	display: flex;
+        	flex-grow: 0;/*коэффициент увеличения flex*/
+        	justify-content: end;/*выравнивание блоков по главной оси flex контейнера*/
+            width: 800px;
+        }
+        #left_menu
+        {
+        	display: flex;
+        	flex-grow: 1;
+        }
+        .menu_item
+        {
+        	margin-right: 8px;
+        } 
+        .article
+        { 
+        	width: 100%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        }
+
+        .box
+        {
+        	display: flex;
+            flex-direction: row;/*расположение flex-элементов во flex-контейнере*/
+            border: 3px solid black;/*параметры рамок*/
+            justify-content: center;
+            width: 700px;
+            padding: 10px 10px;/*поле вокруг контента*/
+            column-gap: 10px;/*устанавливает размер зазора между колоннами элемента*/
+            align-content: center;/*выравнивание блоков по поперечной оси*/
+            margin: 200px auto;/*внешнее поле*/
+        }
+        #left_text
+        {   
+        	/*background-color: red;*/
+            display: flex;
+            border: 2px solid black;/* обертывает контент+отступы*/
+            text-align: center;/*выравнивание текста в блоке*/
+            flex-direction: column;/*расположение flex-элементов во flex-контейнере*/
+        }
+
+        #right_text
+        {
+        	/*background-color: blue;*/
+            display: flex;
+            border: 2px solid black;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .gellery
+		{
+			height: 100%;
+			background-color: rgba(175, 238, 238);
+			display: flex;
+			justify-content: center;
+		}
+		.img_block
+		{
+			display: flex;
+			flex-wrap: wrap;/*разрешает переносить на новую строку*/
+			justify-content: center;
+		    width: 650px;
+			height: 350px;
+			margin: 200px auto;
+			background-color: rgba(255, 228, 225);
+			column-gap: 10px;/*отступы между контейнерами*/
+			row-gap: 10px;/*определяет размер ширины линии*/
+            align-content: center;/*выравнивание блоков по поперечной оси*/
+		}
+		.cell
+		{
+			display: flex;
+			background-color: aqua;
+			width: 200px;
+			height: 150px;
+			background-position: center;/*устанавливает начальную позицию*/
+		}
+		.cell:nth-of-type(1)
+		{
+			background-image: url(imeg/paris.jpeg);
+			background-size: auto 100%;
+		}
+		.cell:nth-of-type(2)
+		{
+			background-image: url(imeg/BurjDubai.jpeg);
+			background-size: auto 100%;
+		}
+		.cell:nth-of-type(3)
+		{
+			background-image: url(imeg/san-francisco.jpeg);
+			background-size: auto 100%;
+		}
+		.cell:nth-of-type(4)
+		{ 
+            background-image: url(imeg/kuala_lumpur.jpeg);
+            background-size: auto 100%;
+		}
+		.cell:nth-of-type(5)
+		{
+			background-image: url(imeg/bali.jpeg);
+			background-size: auto 100%;
+		}
+		.cell:nth-of-type(6)
+		{
+			background-image: url(imeg/singapur.jpeg);
+			background-size: auto 100%;
+		}
+
+        #contauner
+        {   
+            display:flex;
+            justify-content: space-evenly;/*флексы распределяются так, что расстояние между двумя соседними элементами, а также перед первым и после последнего, было одинакого*/
+            /*background-color: green;*/
+        }
+        .flex_container
+        {
+           display: flex;
+            
+        }
+        .flex_item
+        {    
+            /*background-color: pink;*/
+            list-style: none;
+
+            color: rgba(253, 255, 253);
+
+        }
+        #copyright
+        {
+            display: flex;
+            /*background-color: red;*/
+            width: 89%;
+            font-size: 25px;
+            padding: 10px 10px 10px 10px;
+            margin: 0px 25px 0px 20px;
+            color: rgba(210, 214, 219);
+            justify-content: end; 
+        }
+	</style>
+</head>
+<body>
+    <div class="screen">
+        <div id="menu_bar">
+            <div id="left_menu">LOGO</div>
+
+            <div id="right_menu">
+                <div class="menu_item">Главное</div>
+                <div class="menu_item">Меню</div>
+                <div class="menu_item"> Контакты</div>
+                <div class="menu_item">Информация</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen"> 
+        <div class="article">
+            <div class="box">
+
+                <div id="left_text">
+        
+                <h2> Светлый лик правового взаимодействия бодрит</h2>
+        
+                <p>
+                    Банальные, но неопровержимые выводы, а также непосредственные участники технического прогресса заблокированы в рамках своих собственных рациональных ограничений. В рамках спецификации современных стандартов, сделанные на базе интернет-аналитики выводы освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов. Принимая во внимание показатели успешности, сплочённость команды профессионалов однозначно фиксирует необходимость переосмысления внешнеэкономических политик. 
+                </p>
+    
+                </div>
+
+                <div id="right_text">  
+            
+                <h2> Случайный текст похож на гитарный перебор</h2>
+
+                <p>
+                   Задача организации, в особенности же дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность приоритизации разума над эмоциями. И нет сомнений, что сделанные на базе интернет-аналитики выводы в равной степени предоставлены сами себе. В целом, конечно, убеждённость некоторых оппонентов требует определения и уточнения глубокомысленных рассуждений. Внезапно, независимые государства являются только методом политического участия и обнародованы. Внезапно, диаграммы связей, инициированные исключительно синтетически, функционально разнесены на независимые элементы.
+                </p>
+                
+                </div>
+
+            </div>
+        </div> 
+    </div>
+
+    <div class="screen">
+    	<div class="gellery">
+		    <div class="img_block">
+			    <div class="cell"></div>
+			    <div class="cell"></div>
+			    <div class="cell"></div>
+			    <div class="cell"></div>
+			    <div class="cell"></div>
+			    <div class="cell"></div>
+		    </div>
+	    </div>
+    </div> 
+     
+     <footer>
+         
+        <div id="contauner">
+            <div class="flex_container">
+                <ul class="flex_item">
+                    <li>О компании</li>
+                    <li>Наши вакансии</li>
+                    <li>Реклама на сайте </li>
+                    <li>Требования к ПО</li>
+                    <li>Защита песональных данных</li>
+                    <li>Этика и комплаенс</li>
+                    <li>Парнерам</li>
+                    <li>Инвесторам</li>
+                    <li>Условия оказания услуг</li>
+                    <li>Условия использования сайтов</li>
+                </ul>
+            </div>
+            <div class="flex_container">
+                <ul class="flex_item" >
+                    <li>О компании</li>
+                    <li>Наши вакансии</li>
+                    <li>Реклама на сайте </li>
+                    <li>Требования к ПО</li>
+                    <li>Защита песональных данных</li>
+                </ul>
+            </div>
+            <div class="flex_container"> 
+                <ul class="flex_item">
+                    <li>О компании</li>
+                    <li>Наши вакансии</li>
+                    <li>Реклама на сайте </li>
+                </ul>
+            </div>
+        </div>
+            <div id="copyright"> &copy; Gudkova-Jud</div>
+                
+    </footer> 
+</body>
+</html>
